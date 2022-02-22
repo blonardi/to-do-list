@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Mi economia</title>
+
+</head>
+<body>
+
+	<style>
+
+		body{
+			background: #007991;  /* fallback for old browsers */
+			background: -webkit-linear-gradient(to right, #78ffd6, #007991);  /* Chrome 10-25, Safari 5.1-6 */
+			background: linear-gradient(to right, #78ffd6, #007991); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 102+, Safari 7+ */
+			font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+		}
+
+		h1{
+			text-align: center;
+		}
+
+		.panel{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin: auto;
+			gap: 36px;
+			width: 600px;
+			background-color: #24303c;
+			border-radius: 30px;
+			color: whitesmoke;
+			box-shadow: 7px 13px 37px #000;
+		}
+
+		.selector{
+			font-size: 20px;
+		}
+
+		.panel p {
+			text-transform: uppercase;
+			font-size: 22px;
+		}
+
+
+		.text-field{
+			padding: 10px;
+			margin-top: 10px;
+			border-radius: 4px;
+			border: 1px solid #1f53c5;
+			background-color: #24303c;
+			color: whitesmoke;
+			font-size: 18px;
+		} 
+
+		.button-add{
+			text-transform: uppercase;
+			padding: 10px;
+			margin-bottom: 10px;
+		}
+
+		.table-data table{
+			margin: 20px auto;
+		}
+
+		th,td{
+			padding: 10px;
+			text-align: center;
+			border: 2px solid wheat;
+			text-transform: uppercase;
+		}
+
+		.button-add{
+			color: whitesmoke;
+			font-weight: bold;
+			border-radius: 8px;
+			width: 150px;
+			background-color: rgb(0, 189, 6 );
+			cursor: pointer;
+		}
+
+		.button-add:hover{
+			-webkit-transform: scale(1.2);
+			transition-duration: 1.2s;
+		}
+
+	</style>
+
+	<h1>Mi economia LocalStorage</h1>
+
+	<section class="sectionForm">
+		<form id="transactionForm">
+			<div class="panel">
+				<div class="formField">
+					<p>Tipo de transaccion</p>
+					<input type="radio" id="ingreso" name="transactionSelector" value="Ingreso">
+					<label class="selector" for="ingreso">Ingreso</label>
+
+					<input type="radio" id="egreso" name="transactionSelector" value="Egreso">
+					<label class="selector" for="egreso">Egreso</label>
+				</div>
+				<div class="formField">
+					<label for="transactionDescription">Descripcion</label>
+					<br>
+					<input class="text-field" type="text" id="transactionDescription" name="transactionDescription">
+				</div>
+
+				<div class="formField">
+					<label for="transactionCategory">Categoria</label>
+					<br>
+					<input class="text-field" type="text" id="transactionCategory" name="transactionCategory">
+				</div>
+				<div class="formField">
+					<label for="transactionAmount" type="number">Monto</label>
+					<br>
+					<input class="text-field"  type="text" id="transactionAmount" name="transactionAmount">
+				</div>
+				<button type="submit" class="button-add">Add</button>
+			</div>
+		</form>
+	</section>
+
+	<section class="table-data">
+		<table id="transactionTable" data-transaction-id="1234" data-column-amount="4">
+			<tr>
+				<th>Tipo</th>
+				<th>Descripcion</th>
+				<th>Categoria</th>
+				<th>Monto</th>
+				<th>Eliminar</th>
+			</tr>
+		</table>
+	</section>
+
+<script src="script.js"></script>
+</body>
+</html>
